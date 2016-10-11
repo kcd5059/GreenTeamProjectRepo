@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="member")
+
 public class Member {
 	
 	@Id
@@ -26,14 +27,10 @@ public class Member {
 	@Column(name="e_o_d")
 	private Date e_o_d;
 	@Column(name="role")
-	private Role role;
-	
-	public enum Role {
-		TEAM_LEAD, DEVELOPER, ANALYST, PROJECT_MANAGER, VALIDATOR;
-	}
+	private String role;
 
 	public Member() {};
-	public Member(int id, String first_name, String last_name, String gs_grade, Date e_o_d, Role role) {
+	public Member(int id, String first_name, String last_name, String gs_grade, Date e_o_d, String role) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
@@ -42,7 +39,7 @@ public class Member {
 		this.e_o_d = e_o_d;
 		this.role = role;
 	}
-	public Member(String first_name, String last_name, String gs_grade, Date e_o_d, Role role) {
+	public Member(String first_name, String last_name, String gs_grade, Date e_o_d, String role) {
 		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -80,10 +77,10 @@ public class Member {
 	public void setE_o_d(Date e_o_d) {
 		this.e_o_d = e_o_d;
 	}
-	public Role getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(Role role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 	

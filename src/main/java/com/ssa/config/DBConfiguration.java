@@ -11,7 +11,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.ssa.entity.Student;
+import com.ssa.entity.Member;
 
 @Configuration
 @EnableTransactionManagement
@@ -35,7 +35,7 @@ public class DBConfiguration {
 
     @Bean
     public SessionFactory sessionFactory() {
-        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Student.class)
+        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class)
                 .buildSessionFactory();
     }
 
