@@ -1,12 +1,13 @@
 package com.ssa.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-//import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,43 +30,43 @@ public class MemberController {
         return new ResponseEntity<List<Member>>(members, HttpStatus.OK);
     }
 	
-//	@RequestMapping(value= "/student/{id}", method = RequestMethod.GET)
-//    public ResponseEntity<Student> getStudentById(@PathVariable("id") Integer id) {
-//        Student student = studentService.getStudentById(id);
-//        return new ResponseEntity<Student>(student, HttpStatus.OK);
-//    }
-//	
-//	@RequestMapping(value= "/deletestudent/{id}", method = RequestMethod.GET)
-//    public void deleteStudent(@PathVariable("id") Integer id) {
-//        Student student = studentService.getStudentById(id);
-//        studentService.deleteStudent(student);
-//    }
-//		@RequestMapping(value= "/updatestudent/{id}/{fn}/{ln}/{sat}/{gpa}/{mId}", method = RequestMethod.GET)
-//	    public void updateStudent(
-//	    		@PathVariable("id") Integer id, @PathVariable("fn") String fn, @PathVariable("ln") String ln,
-//	    		@PathVariable("sat") int sat, @PathVariable("gpa") double gpa, @PathVariable("mId") Integer mId
-//	    		) {
-//	        Student student = studentService.getStudentById(id);
-//	        student.setFirst_name(fn);
-//	        student.setLast_name(ln);
-//	        student.setSat(sat);
-//	        student.setGpa(gpa);
-//	        student.setMajor_id(mId);
-//	        studentService.updateStudent(student);
-//	    }
-//	
-//		@RequestMapping(value= "/addstudent/{fn}/{ln}/{sat}/{gpa}/{mId}", method = RequestMethod.GET)
-//	    public boolean addStudent(
-//	    		@PathVariable("fn") String fn, @PathVariable("ln") String ln,
-//	    		@PathVariable("sat") int sat, @PathVariable("gpa") double gpa, @PathVariable("mId") Integer mId) {
-//	        Student student = new Student();
-//	        student.setFirst_name(fn);
-//	        student.setLast_name(ln);
-//	        student.setSat(sat);
-//	        student.setGpa(gpa);
-//	        student.setMajor_id(mId);
-//	        studentService.addStudent(student);
-//	        return true;
-//	    }
+	@RequestMapping(value= "/member/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Member> getMemberById(@PathVariable("id") Integer id) {
+        Member member = memberService.getMemberById(id);
+        return new ResponseEntity<Member>(member, HttpStatus.OK);
+    }
+	
+	@RequestMapping(value= "/deletemember/{id}", method = RequestMethod.GET)
+    public void deleteMember(@PathVariable("id") Integer id) {
+        Member member = memberService.getMemberById(id);
+        memberService.deleteMember(member);
+    }
+		@RequestMapping(value= "/updatemember/{id}/{fn}/{ln}/{gs}/{eod}/{role}", method = RequestMethod.GET)
+	    public void updateMember(
+	    		@PathVariable("id") Integer id, @PathVariable("fn") String fn, @PathVariable("ln") String ln,
+	    		@PathVariable("gs") String gs, @PathVariable("eod") Date eod, @PathVariable("role") String role
+	    		) {
+	        Member member = memberService.getMemberById(id);
+	        member.setFirst_name(fn);
+	        member.setLast_name(ln);
+	        member.setGs_grade(gs);
+	        member.setE_o_d(eod);
+	        member.setRole(role);
+	        memberService.updateMember(member);
+	    }
+	
+		@RequestMapping(value= "/addmember/{fn}/{ln}/{gs}/{eod}/{role}", method = RequestMethod.GET)
+	    public boolean addMember(
+	    		@PathVariable("fn") String fn, @PathVariable("ln") String ln,
+	    		@PathVariable("gs") String gs, @PathVariable("eod") Date eod, @PathVariable("role") String role) {
+			Member member = new Member();
+			member.setFirst_name(fn);
+	        member.setLast_name(ln);
+	        member.setGs_grade(gs);
+	        member.setE_o_d(eod);
+	        member.setRole(role);
+	        memberService.addMember(member);
+	        return true; // wtf is this?
+	    }
 
 }
