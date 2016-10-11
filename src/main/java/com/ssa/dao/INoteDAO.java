@@ -1,5 +1,5 @@
-package com.ssa.dao;
-
-public interface INoteDAO {
-
-}
+//package com.ssa.dao;
+//
+//public interface INoteDAO {
+//
+//}

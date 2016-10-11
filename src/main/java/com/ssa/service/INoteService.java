@@ -1,5 +1,5 @@
-package com.ssa.service;
-
-public interface INoteService {
-
-}
+//package com.ssa.service;
+//
+//public interface INoteService {
+//
+//}

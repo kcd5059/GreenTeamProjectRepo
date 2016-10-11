@@ -1,5 +1,5 @@
-package com.ssa.dao;
-
-public interface IProjectDAO {
-
-}
+//package com.ssa.dao;
+//
+//public interface IProjectDAO {
+//
+//}

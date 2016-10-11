@@ -1,5 +1,5 @@
-package com.ssa.service;
-
-public interface ITeamService {
-
-}
+//package com.ssa.service;
+//
+//public interface ITeamService {
+//
+//}

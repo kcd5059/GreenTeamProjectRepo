@@ -1,5 +1,5 @@
-package com.ssa.service;
-
-public interface NoteService {
-
-}
+//package com.ssa.service;
+//
+//public interface NoteService {
+//
+//}

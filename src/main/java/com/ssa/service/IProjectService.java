@@ -1,5 +1,5 @@
-package com.ssa.service;
-
-public interface IProjectService {
-
-}
+//package com.ssa.service;
+//
+//public interface IProjectService {
+//
+//}

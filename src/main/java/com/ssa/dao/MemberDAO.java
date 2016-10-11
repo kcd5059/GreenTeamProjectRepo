@@ -7,7 +7,7 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ssa.entity.Student;
+import com.ssa.entity.Member;
 
 @Transactional
 @Repository
@@ -18,19 +18,19 @@ public class MemberDAO implements IMemberDAO {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Student> getAllStudents() {
-        String hql = "FROM Student as s ORDER BY s.id";
-        return (List<Student>) hibernateTemplate.find(hql);
+    public List<Member> getAllMembers() {
+        String hql = "FROM Member as m ORDER BY m.id";
+        return (List<Member>) hibernateTemplate.find(hql);
     }
 
 	@Override
-	public Student getStudentById(int studentId) {
-		return (Student) hibernateTemplate.get(Student.class, studentId);
+	public Member getMemberById(int memberId) {
+		return (Member) hibernateTemplate.get(Member.class, memberId);
 	}
 
 	@Override
-	public boolean addStudent(Student student) {
-		int result = (int) hibernateTemplate.save(student);
+	public boolean addMember(Member member) {
+		int result = (int) hibernateTemplate.save(member);
 		if (result != -1) {
 			return true;
 		} else {
@@ -39,13 +39,13 @@ public class MemberDAO implements IMemberDAO {
 	}
 
 	@Override
-	public void updateStudent(Student student) {
-		hibernateTemplate.update(student);
+	public void updateMember(Member member) {
+		hibernateTemplate.update(member);
 	}
 
 	@Override
-	public void deleteStudent(Student student) {
-		Student dbStudent = getStudentById(student.getId());
-		hibernateTemplate.delete(dbStudent);
+	public void deleteMember(Member member) {
+		Member dbMember = getMemberById(member.getId());
+		hibernateTemplate.delete(dbMember);
 	}
 }
