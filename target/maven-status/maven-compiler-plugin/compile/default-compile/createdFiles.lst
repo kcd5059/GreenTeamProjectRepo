@@ -1,12 +1,11 @@
 com\ssa\config\DBConfiguration.class
 com\ssa\application\Application.class
 com\ssa\controller\HelloController.class
-com\ssa\controller\MemberController.class
 com\ssa\service\IMemberService.class
 com\ssa\dao\IMemberDAO.class
-com\ssa\entity\Member$Role.class
 eddb\Student.class
 com\ssa\dao\MemberDAO.class
 com\ssa\entity\Member.class
 com\ssa\service\MemberService.class
+com\ssa\controller\MemberController.class
 com\ssa\entity\Student.class

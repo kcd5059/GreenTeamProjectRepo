@@ -42,41 +42,39 @@ public class MemberController {
 		memberService.deleteMember(member);
 	}
 
-//	@RequestMapping(value = "/updatemember/{id}/{fn}/{ln}/{gs}/{eod}/{role}", method = RequestMethod.GET)
+//	@RequestMapping(value = "/updatemember/{id}/{fn}/{ln}/{gs}/{role}", method = RequestMethod.GET)
 //	public void updateMember(@PathVariable("id") Integer id, @PathVariable("fn") String fn,
-//			@PathVariable("ln") String ln, @PathVariable("gs") String gs, @PathVariable("eod") Date eod,
+//			@PathVariable("ln") String ln, @PathVariable("gs") String gs,
 //			@PathVariable("role") String role) {
 //		Member member = memberService.getMemberById(id);
 //		member.setFirst_name(fn);
 //		member.setLast_name(ln);
 //		member.setGs_grade(gs);
-//		member.setE_o_d(eod);
 //		member.setRole(role);
 //		memberService.updateMember(member);
 //	}
 	
-	@RequestMapping(value="/member", method = RequestMethod.PUT)
-	public ResponseEntity<Void> updateStudent(@RequestBody Member member) {
-		System.err.println("POST: Member id is " + member.getId());
+	@RequestMapping(value="/member/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Void> updateMember(@RequestBody Member member) {
+	//	System.err.println("POST: Member id is " + member.getId());
 		memberService.updateMember(member);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
-//	@RequestMapping(value = "/addmember/{fn}/{ln}/{gs}/{eod}/{role}", method = RequestMethod.GET)
+//	@RequestMapping(value = "/addmember/{fn}/{ln}/{gs}/{role}", method = RequestMethod.GET)
 //	public boolean addMember(@PathVariable("fn") String fn, @PathVariable("ln") String ln,
-//			@PathVariable("gs") String gs, @PathVariable("eod") Date eod, @PathVariable("role") String role) {
+//			@PathVariable("gs") String gs, @PathVariable("role") String role) {
 //		Member member = new Member();
 //		member.setFirst_name(fn);
 //		member.setLast_name(ln);
 //		member.setGs_grade(gs);
-//		member.setE_o_d(eod);
 //		member.setRole(role);
 //		memberService.addMember(member);
 //		return true; // wtf is this?
 //	}
 	
 	@RequestMapping(value="/member", method = RequestMethod.POST)
-	public ResponseEntity<Void> addStudent(@RequestBody Member member) {
+	public ResponseEntity<Void> addMember(@RequestBody Member member) {
 		System.err.println("PUT: Member is " + member);
 		memberService.addMember(member);
 		return new ResponseEntity<Void>(HttpStatus.OK);

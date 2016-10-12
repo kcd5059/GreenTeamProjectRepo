@@ -1,7 +1,5 @@
 package com.ssa.entity;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="member")
-
 public class Member {
 	
 	@Id
@@ -24,27 +21,23 @@ public class Member {
 	private String last_name;
 	@Column(name="gs_grade")
 	private String gs_grade;
-	@Column(name="e_o_d")
-	private Date e_o_d;
 	@Column(name="role")
 	private String role;
 
 	public Member() {};
-	public Member(int id, String first_name, String last_name, String gs_grade, Date e_o_d, String role) {
+	public Member(int id, String first_name, String last_name, String gs_grade, String role) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.gs_grade = gs_grade;
-		this.e_o_d = e_o_d;
 		this.role = role;
 	}
-	public Member(String first_name, String last_name, String gs_grade, Date e_o_d, String role) {
+	public Member(String first_name, String last_name, String gs_grade, String role) {
 		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.gs_grade = gs_grade;
-		this.e_o_d = e_o_d;
 		this.role = role;
 	}
 	public int getId() {
@@ -71,23 +64,12 @@ public class Member {
 	public void setGs_grade(String gs_grade) {
 		this.gs_grade = gs_grade;
 	}
-	public Date getE_o_d() {
-		return e_o_d;
-	}
-	public void setE_o_d(Date eod) {
-		this.e_o_d = eod;
-	}
 	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
-	
-	
-	
 	
 
 }

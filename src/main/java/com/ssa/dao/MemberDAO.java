@@ -39,7 +39,13 @@ public class MemberDAO implements IMemberDAO {
 
 	@Override
 	public void updateMember(Member member) {
-		hibernateTemplate.update(member);
+		Member record= getMemberById(member.getId());
+		record.setFirst_name(member.getFirst_name());
+		record.setLast_name(member.getLast_name());
+		record.setId(member.getId());
+		record.setGs_grade(member.getGs_grade());
+		record.setRole(member.getRole());
+		hibernateTemplate.update(record);
 	}
 
 	@Override
