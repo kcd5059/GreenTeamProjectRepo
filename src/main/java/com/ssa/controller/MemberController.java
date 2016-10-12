@@ -1,8 +1,6 @@
 package com.ssa.controller;
 
-import java.sql.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,36 +40,14 @@ public class MemberController {
 		memberService.deleteMember(member);
 	}
 
-//	@RequestMapping(value = "/updatemember/{id}/{fn}/{ln}/{gs}/{role}", method = RequestMethod.GET)
-//	public void updateMember(@PathVariable("id") Integer id, @PathVariable("fn") String fn,
-//			@PathVariable("ln") String ln, @PathVariable("gs") String gs,
-//			@PathVariable("role") String role) {
-//		Member member = memberService.getMemberById(id);
-//		member.setFirst_name(fn);
-//		member.setLast_name(ln);
-//		member.setGs_grade(gs);
-//		member.setRole(role);
-//		memberService.updateMember(member);
-//	}
 	
-	@RequestMapping(value="/member/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value="/member", method = RequestMethod.PUT)
 	public ResponseEntity<Void> updateMember(@RequestBody Member member) {
 	//	System.err.println("POST: Member id is " + member.getId());
 		memberService.updateMember(member);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
-//	@RequestMapping(value = "/addmember/{fn}/{ln}/{gs}/{role}", method = RequestMethod.GET)
-//	public boolean addMember(@PathVariable("fn") String fn, @PathVariable("ln") String ln,
-//			@PathVariable("gs") String gs, @PathVariable("role") String role) {
-//		Member member = new Member();
-//		member.setFirst_name(fn);
-//		member.setLast_name(ln);
-//		member.setGs_grade(gs);
-//		member.setRole(role);
-//		memberService.addMember(member);
-//		return true; // wtf is this?
-//	}
 	
 	@RequestMapping(value="/member", method = RequestMethod.POST)
 	public ResponseEntity<Void> addMember(@RequestBody Member member) {
