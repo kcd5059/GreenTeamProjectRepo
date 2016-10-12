@@ -1,6 +1,6 @@
 package com.ssa.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -74,8 +74,8 @@ public class Member {
 	public Date getE_o_d() {
 		return e_o_d;
 	}
-	public void setE_o_d(Date e_o_d) {
-		this.e_o_d = e_o_d;
+	public void setE_o_d(Date eod) {
+		this.e_o_d = eod;
 	}
 	public String getRole() {
 		return role;
