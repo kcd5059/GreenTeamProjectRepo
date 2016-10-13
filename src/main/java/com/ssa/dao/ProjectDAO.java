@@ -1,14 +1,17 @@
 package com.ssa.dao;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.ssa.entity.Project;
 
-
+@Transactional
+@Repository
 public class ProjectDAO implements IProjectDAO {
-	
+
 	@Autowired
     private HibernateTemplate hibernateTemplate;
     

@@ -20,7 +20,7 @@ public class ProjectController {
 	
 	@Autowired
 	private IProjectService projectService;
-	
+
 	@RequestMapping(value = "/projects", method = RequestMethod.GET)
 	public ResponseEntity<List<Project>> getAllProjects() {
 		List<Project> projects = projectService.getAllProjects();
@@ -52,5 +52,4 @@ public class ProjectController {
 		projectService.addProject(project);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
-
 }

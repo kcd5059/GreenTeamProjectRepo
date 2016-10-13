@@ -3,13 +3,15 @@ package com.ssa.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ssa.dao.IProjectDAO;
 import com.ssa.entity.Project;
 
 
+@Service
 public class ProjectService implements IProjectService {
-	
+
 	@Autowired
 	private IProjectDAO projectDAO;
 
@@ -38,5 +40,4 @@ public class ProjectService implements IProjectService {
 		projectDAO.deleteProject(project);
 		
 	}
-
 }

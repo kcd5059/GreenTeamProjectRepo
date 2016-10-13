@@ -19,43 +19,39 @@ public class Project {
 	private String description;
 	@Column(name="active")
 	private int active;
-	
-	public Project() {}
-
+	public Project() {
+		super();
+	}
 	public Project(int id, String description, int active) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.active = active;
 	}
-
 	public Project(String description, int active) {
 		super();
 		this.description = description;
 		this.active = active;
 	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public int getActive() {
 		return active;
 	}
-
 	public void setActive(int active) {
 		this.active = active;
-	};
+	}
+	
+	
+
 }
