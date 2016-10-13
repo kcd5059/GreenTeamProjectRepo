@@ -14,6 +14,10 @@ public class MemberDAO implements IMemberDAO {
 
     @Autowired
     private HibernateTemplate hibernateTemplate;
+    
+    public MemberDAO(HibernateTemplate ht) {
+    	this.hibernateTemplate = ht;
+    }
 
     @SuppressWarnings("unchecked")
     @Override

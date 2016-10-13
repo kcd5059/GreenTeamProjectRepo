@@ -13,15 +13,19 @@ import com.ssa.entity.Team;
 @Repository
 public class TeamDAO implements ITeamDAO {
 
-	@Autowired
-	private HibernateTemplate hibernateTemplate;
+    @Autowired
+    private HibernateTemplate hibernateTemplate;
+    
+    public TeamDAO(HibernateTemplate ht) {
+    	this.hibernateTemplate = ht;
+    }
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Team> getAllTeams() {
-		String hql = "FROM Team as t ORDER BY t.id";
-		return (List<Team>) hibernateTemplate.find(hql);
-	}
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Team> getAllTeams() {
+        String hql = "FROM Team as t ORDER BY t.id";
+        return (List<Team>) hibernateTemplate.find(hql);
+    }
 
 	@Override
 	public Team getTeamById(int teamId) {
@@ -40,16 +44,15 @@ public class TeamDAO implements ITeamDAO {
 
 	@Override
 	public void updateTeam(Team team) {
-		Team record = getTeamById(team.getId());
-		record.setDescription(team.getDescription());
-		record.setMember_id(team.getMember_id());
-		hibernateTemplate.update(record);
+		Team update = getTeamById(team.getId());
+		update.setDescription(team.getDescription());
+		update.setMember_id(team.getMember_id());
+		hibernateTemplate.update(update);
 	}
 
 	@Override
 	public void deleteTeam(Team team) {
-		Team dbTeam = getTeamById(team.getId());
-		hibernateTemplate.delete(dbTeam);
+		Team delete = getTeamById(team.getId());
+		hibernateTemplate.delete(delete);
 	}
-
 }

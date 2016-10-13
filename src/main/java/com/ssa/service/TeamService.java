@@ -3,12 +3,14 @@ package com.ssa.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ssa.dao.ITeamDAO;
 import com.ssa.entity.Team;
 
+@Service
 public class TeamService implements ITeamService {
-
+	
 	@Autowired
 	private ITeamDAO teamDAO;
 
@@ -37,4 +39,6 @@ public class TeamService implements ITeamService {
 		teamDAO.deleteTeam(team);
 		
 	}
+
 }
+

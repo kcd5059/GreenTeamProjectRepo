@@ -22,13 +22,11 @@ public class Team {
 	
 	public Team() {};
 	public Team(int id, String description, int member_id) {
-		super();
 		this.id = id;
 		this.description = description;
 		this.member_id = member_id;
 	}
 	public Team(String description, int member_id) {
-		super();
 		this.description = description;
 		this.member_id = member_id;
 	}
@@ -50,6 +48,5 @@ public class Team {
 	public void setMember_id(int member_id) {
 		this.member_id = member_id;
 	}
-	
 	
 }
