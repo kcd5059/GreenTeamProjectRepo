@@ -1,29 +1,18 @@
 package com.ssa.config;
 
-import java.util.Properties;
 import javax.sql.DataSource;
-
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-//import com.ssa.dao.IMemberDAO;
-import com.ssa.dao.ITeamDAO;
-//import com.ssa.dao.MemberDAO;
-import com.ssa.dao.TeamDAO;
+
 import com.ssa.entity.Member;
-//import com.ssa.entity.Member;
+import com.ssa.entity.Project;
 import com.ssa.entity.Team;
 
 @Configuration
@@ -47,7 +36,7 @@ public class DBConfiguration {
 
     @Bean
     public SessionFactory sessionFactory() {
-        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class)
+        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class)
                 .buildSessionFactory();
     }
 
