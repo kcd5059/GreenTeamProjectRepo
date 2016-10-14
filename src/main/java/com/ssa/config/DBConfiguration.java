@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.ssa.entity.Member;
 import com.ssa.entity.Note;
 import com.ssa.entity.Project;
+import com.ssa.entity.ProjectTeamRel;
 import com.ssa.entity.Team;
 
 @Configuration
@@ -37,7 +38,7 @@ public class DBConfiguration {
 
     @Bean
     public SessionFactory sessionFactory() {
-        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class)
+        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class, ProjectTeamRel.class)
                 .buildSessionFactory();
     }
 

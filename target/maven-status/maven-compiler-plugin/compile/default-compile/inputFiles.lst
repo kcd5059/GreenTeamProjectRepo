@@ -13,6 +13,7 @@ C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\entity\Note.ja
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\ProjectTeamRelController.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\IProjectTeamRelService.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\ITeamDAO.java
+C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\entity\ProjectNoteRel.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\NoteController.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\config\Config.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\MemberController.java

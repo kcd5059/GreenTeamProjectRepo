@@ -17,6 +17,7 @@ com\ssa\dao\INoteDAO.class
 eddb\Student.class
 com\ssa\dao\IProjectTeamRelDAO.class
 com\ssa\dao\MemberDAO.class
+com\ssa\entity\ProjectNoteRel.class
 com\ssa\entity\Student.class
 com\ssa\dao\ProjectTeamRelDAO.class
 com\ssa\config\DBConfiguration.class
