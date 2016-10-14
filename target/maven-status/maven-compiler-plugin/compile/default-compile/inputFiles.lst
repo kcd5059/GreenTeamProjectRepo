@@ -10,6 +10,8 @@ C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\entity\Team.ja
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\ITeamService.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\ProjectService.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\entity\Note.java
+C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\ProjectTeamRelController.java
+C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\IProjectTeamRelService.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\ITeamDAO.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\NoteController.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\config\Config.java
@@ -20,12 +22,16 @@ C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\TeamSe
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\TeamController.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\TestController.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\INoteService.java
+C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\IProjectTeamRelDAO.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\controller\HelloController.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\ProjectDAO.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\eddb\Student.java
+C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\entity\ProjectTeamRel.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\INoteDAO.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\config\DBConfiguration.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\TeamDAO.java
+C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\ProjectTeamRelDAO.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\dao\MemberDAO.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\IProjectService.java
 C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\entity\Project.java
+C:\Users\admin\ProjectWorkspace\basicWebApp\src\main\java\com\ssa\service\ProjectTeamRelService.java
