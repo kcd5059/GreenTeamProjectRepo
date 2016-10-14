@@ -39,7 +39,7 @@ public class TeamController {
 		teamService.deleteTeam(team);
 	}
 
-	@RequestMapping(value="/team", method = RequestMethod.PUT)
+	@RequestMapping(value="/updateteam", method = RequestMethod.PUT)
 	public ResponseEntity<Void> updateTeam(@RequestBody Team team) {
 		teamService.updateTeam(team);
 		return new ResponseEntity<Void>(HttpStatus.OK);

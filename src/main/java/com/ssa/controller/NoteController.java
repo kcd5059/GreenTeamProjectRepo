@@ -40,7 +40,7 @@ public class NoteController {
 	}
 
 	
-	@RequestMapping(value="/note", method = RequestMethod.PUT)
+	@RequestMapping(value="/updatenote", method = RequestMethod.PUT)
 	public ResponseEntity<Void> updateNote(@RequestBody Note note) {
 		noteService.updateNote(note);
 		return new ResponseEntity<Void>(HttpStatus.OK);

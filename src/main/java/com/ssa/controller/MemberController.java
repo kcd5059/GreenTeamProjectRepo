@@ -41,7 +41,7 @@ public class MemberController {
 	}
 
 	
-	@RequestMapping(value="/member", method = RequestMethod.PUT)
+	@RequestMapping(value="/updatemember", method = RequestMethod.PUT)
 	public ResponseEntity<Void> updateMember(@RequestBody Member member) {
 	//	System.err.println("POST: Member id is " + member.getId());
 		memberService.updateMember(member);

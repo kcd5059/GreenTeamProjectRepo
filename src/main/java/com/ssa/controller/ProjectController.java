@@ -40,7 +40,7 @@ public class ProjectController {
 	}
 
 	
-	@RequestMapping(value="/project", method = RequestMethod.PUT)
+	@RequestMapping(value="/updateproject", method = RequestMethod.PUT)
 	public ResponseEntity<Void> updateProject(@RequestBody Project project) {
 		projectService.updateProject(project);
 		return new ResponseEntity<Void>(HttpStatus.OK);
