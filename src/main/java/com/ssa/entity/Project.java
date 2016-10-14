@@ -19,19 +19,24 @@ public class Project {
 	private String description;
 	@Column(name="active")
 	private int active;
+	@Column(name="priority")
+	private int priority;
+	
 	public Project() {
 		super();
 	}
-	public Project(int id, String description, int active) {
+	public Project(int id, String description, int active, int priority) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.active = active;
+		this.priority = priority;
 	}
-	public Project(String description, int active) {
+	public Project(String description, int active, int priority) {
 		super();
 		this.description = description;
 		this.active = active;
+		this.priority = priority;
 	}
 	public int getId() {
 		return id;
@@ -51,6 +56,13 @@ public class Project {
 	public void setActive(int active) {
 		this.active = active;
 	}
+	public int getPriority() {
+		return priority;
+	}
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+	
 	
 	
 

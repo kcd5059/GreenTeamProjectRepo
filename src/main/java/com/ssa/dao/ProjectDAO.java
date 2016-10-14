@@ -46,6 +46,7 @@ public class ProjectDAO implements IProjectDAO {
 		Project update = getProjectById(project.getId());
 		update.setDescription(project.getDescription());
 		update.setActive(project.getActive());
+		update.setPriority(project.getPriority());
 		hibernateTemplate.update(update);
 	}
 
