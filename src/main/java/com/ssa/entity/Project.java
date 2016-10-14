@@ -1,5 +1,7 @@
 package com.ssa.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,22 +23,35 @@ public class Project {
 	private int active;
 	@Column(name="priority")
 	private int priority;
+	@Column(name="start_date")
+	private Date start_date;
+	@Column(name="deadline")
+	private Date deadline;
+	@Column(name="phase")
+	private String phase;
+	
 	
 	public Project() {
 		super();
 	}
-	public Project(int id, String description, int active, int priority) {
+	public Project(String description, int active, int priority, Date start_date, Date deadline, String phase) {
+		super();
+		this.description = description;
+		this.active = active;
+		this.priority = priority;
+		this.start_date = start_date;
+		this.deadline = deadline;
+		this.phase = phase;
+	}
+	public Project(int id, String description, int active, int priority, Date start_date, Date deadline, String phase) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.active = active;
 		this.priority = priority;
-	}
-	public Project(String description, int active, int priority) {
-		super();
-		this.description = description;
-		this.active = active;
-		this.priority = priority;
+		this.start_date = start_date;
+		this.deadline = deadline;
+		this.phase = phase;
 	}
 	public int getId() {
 		return id;
@@ -61,6 +76,24 @@ public class Project {
 	}
 	public void setPriority(int priority) {
 		this.priority = priority;
+	}
+	public Date getStart_date() {
+		return start_date;
+	}
+	public void setStart_date(Date start_date) {
+		this.start_date = start_date;
+	}
+	public Date getDeadline() {
+		return deadline;
+	}
+	public void setDeadline(Date deadline) {
+		this.deadline = deadline;
+	}
+	public String getPhase() {
+		return phase;
+	}
+	public void setPhase(String phase) {
+		this.phase = phase;
 	}
 	
 	

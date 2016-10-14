@@ -4,6 +4,7 @@ com\ssa\controller\ProjectTeamRelController.class
 com\ssa\entity\Project.class
 com\ssa\application\Application.class
 com\ssa\controller\NoteController.class
+com\ssa\service\ProjectNoteRelService.class
 com\ssa\controller\HelloController.class
 com\ssa\service\TeamService.class
 com\ssa\controller\TeamController.class
@@ -24,11 +25,15 @@ com\ssa\config\DBConfiguration.class
 com\ssa\entity\ProjectTeamRel.class
 com\ssa\entity\Note.class
 com\ssa\dao\IProjectDAO.class
+com\ssa\dao\IProjectNoteRelDAO.class
 com\ssa\service\ProjectService.class
 com\ssa\service\INoteService.class
 com\ssa\controller\MemberController.class
 com\ssa\service\ITeamService.class
+com\ssa\dao\ProjectNoteRelDAO.class
 com\ssa\dao\TeamDAO.class
+com\ssa\service\IProjectNoteRelService.class
+com\ssa\controller\ProjectNoteRelController.class
 com\ssa\dao\IMemberDAO.class
 com\ssa\service\IProjectTeamRelService.class
 com\ssa\dao\ITeamDAO.class
