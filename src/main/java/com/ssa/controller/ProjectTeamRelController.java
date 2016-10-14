@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.ssa.entity.Team;
 import com.ssa.entity.ProjectTeamRel;
 import com.ssa.service.IProjectTeamRelService;
 
@@ -28,6 +30,13 @@ public class ProjectTeamRelController {
 		return new ResponseEntity<List<ProjectTeamRel>>(ptrs, HttpStatus.OK);
 	}
 
+	// Get list of teams given a projectId
+	@RequestMapping(value = "/getteams/{pid}", method = RequestMethod.GET)
+	public ResponseEntity<List<Team>> getAllTeamsByProjectId(@PathVariable("pid") Integer pId) {
+		List<Team> teams = ptrService.getAllTeamsByProjectId(pId);
+		return new ResponseEntity<List<Team>>(teams, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/projectteamrel/{id}", method = RequestMethod.GET)
 	public ResponseEntity<ProjectTeamRel> getProjectTeamRelById(@PathVariable("id") Integer id) {
 		ProjectTeamRel ptr = ptrService.getProjectTeamRelById(id);
@@ -39,10 +48,11 @@ public class ProjectTeamRelController {
 		ProjectTeamRel ptr = ptrService.getProjectTeamRelById(id);
 		ptrService.deleteRel(ptr);
 	}
-	
-	@RequestMapping(value="/projectteamrel", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/projectteamrel", method = RequestMethod.POST)
 	public ResponseEntity<Void> addRel(@RequestBody ProjectTeamRel ptr) {
 		ptrService.addRel(ptr);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
+
 }

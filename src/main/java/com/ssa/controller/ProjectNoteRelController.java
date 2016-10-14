@@ -29,6 +29,7 @@ public class ProjectNoteRelController {
 		return new ResponseEntity<List<ProjectNoteRel>>(pnrs, HttpStatus.OK);
 	}
 	
+	// Get list of notes given a projectId
 	@RequestMapping(value = "/getprojectnotes/{pid}", method = RequestMethod.GET)
 	public ResponseEntity<List<Note>> getAllNotesByProjectId(@PathVariable("pid") Integer pId) {
 		List<Note> notes = pnrService.getAllNotesByProjectId(pId);

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ssa.dao.IProjectTeamRelDAO;
 import com.ssa.entity.ProjectTeamRel;
+import com.ssa.entity.Team;
 
 @Service
 public class ProjectTeamRelService implements IProjectTeamRelService {
@@ -31,6 +32,11 @@ public class ProjectTeamRelService implements IProjectTeamRelService {
 	public void deleteRel(ProjectTeamRel ptr) {
 		ptrDAO.deleteRel(ptr);
 		
+	}
+
+	@Override
+	public List<Team> getAllTeamsByProjectId(int pId) {
+		return ptrDAO.getAllTeamsByProjectId(pId);
 	}
 	
 }
