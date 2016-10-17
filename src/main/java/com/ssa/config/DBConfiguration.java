@@ -1,15 +1,17 @@
 package com.ssa.config;
 
 import javax.sql.DataSource;
-import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 
 import com.ssa.entity.Member;
 import com.ssa.entity.Note;
@@ -20,22 +22,36 @@ import com.ssa.entity.Team;
 
 @Configuration
 @EnableTransactionManagement
+@PropertySource(value = { "classpath:application.properties" }) //
 public class DBConfiguration {
+	
+	@Autowired //
+    private Environment environment; //
 	
 	@Bean
     public HibernateTemplate hibernateTemplate() {
         return new HibernateTemplate(sessionFactory());
     }
-
-    @Bean
-    public DataSource getDataSource() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/tracky?autoReconnect=true&useSSL=false");
-        dataSource.setUsername("root");
-        dataSource.setPassword("admin");
-        return dataSource;
+	
+    @Bean //
+    public DataSource getDataSource() { //
+         DriverManagerDataSource dataSource = new DriverManagerDataSource();
+         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
+         dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
+         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
+         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+         return dataSource;
     }
+
+//    @Bean
+//    public DataSource getDataSource() {
+//        BasicDataSource dataSource = new BasicDataSource();
+//        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//        dataSource.setUrl("jdbc:mysql://localhost:3306/tracky?autoReconnect=true&useSSL=false");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("admin");
+//        return dataSource;
+//    }
 
     @Bean
     public SessionFactory sessionFactory() {
