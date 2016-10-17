@@ -50,6 +50,7 @@ public class ProjectDAO implements IProjectDAO {
 		update.setPriority(project.getPriority());
 		update.setDeadline(project.getDeadline());
 		update.setStart_date(project.getStart_date());
+		update.setWork_remaining(project.getWork_remaining());
 		update.setPhase(project.getPhase());
 		hibernateTemplate.update(update);
 	}

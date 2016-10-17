@@ -29,6 +29,8 @@ public class Project {
 	private Date start_date;
 	@Column(name="deadline")
 	private Date deadline;
+	@Column(name="work_remaining")
+	private int work_remaining;
 	@Column(name="phase")
 	private String phase;
 	
@@ -37,8 +39,9 @@ public class Project {
 		super();
 	}
 	
+
 	public Project(String name, String description, int active, int priority, Date start_date, Date deadline,
-			String phase) {
+			int work_remaining, String phase) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -46,11 +49,13 @@ public class Project {
 		this.priority = priority;
 		this.start_date = start_date;
 		this.deadline = deadline;
+		this.work_remaining = work_remaining;
 		this.phase = phase;
 	}
 
+
 	public Project(int id, String name, String description, int active, int priority, Date start_date, Date deadline,
-			String phase) {
+			int work_remaining, String phase) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -59,8 +64,10 @@ public class Project {
 		this.priority = priority;
 		this.start_date = start_date;
 		this.deadline = deadline;
+		this.work_remaining = work_remaining;
 		this.phase = phase;
 	}
+
 
 	public int getId() {
 		return id;
@@ -112,6 +119,14 @@ public class Project {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public int getWork_remaining() {
+		return work_remaining;
+	}
+	public void setWork_remaining(int work_remaining) {
+		this.work_remaining = work_remaining;
+	}
+	
 	
 	
 	
