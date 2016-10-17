@@ -44,6 +44,7 @@ public class ProjectDAO implements IProjectDAO {
 	@Override
 	public void updateProject(Project project) {
 		Project update = getProjectById(project.getId());
+		update.setName(project.getName());
 		update.setDescription(project.getDescription());
 		update.setActive(project.getActive());
 		update.setPriority(project.getPriority());

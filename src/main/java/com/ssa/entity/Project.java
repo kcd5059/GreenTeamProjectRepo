@@ -17,6 +17,8 @@ public class Project {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
+	@Column(name="name")
+	private String name;
 	@Column(name="description")
 	private String description;
 	@Column(name="active")
@@ -34,8 +36,11 @@ public class Project {
 	public Project() {
 		super();
 	}
-	public Project(String description, int active, int priority, Date start_date, Date deadline, String phase) {
+	
+	public Project(String name, String description, int active, int priority, Date start_date, Date deadline,
+			String phase) {
 		super();
+		this.name = name;
 		this.description = description;
 		this.active = active;
 		this.priority = priority;
@@ -43,9 +48,12 @@ public class Project {
 		this.deadline = deadline;
 		this.phase = phase;
 	}
-	public Project(int id, String description, int active, int priority, Date start_date, Date deadline, String phase) {
+
+	public Project(int id, String name, String description, int active, int priority, Date start_date, Date deadline,
+			String phase) {
 		super();
 		this.id = id;
+		this.name = name;
 		this.description = description;
 		this.active = active;
 		this.priority = priority;
@@ -53,6 +61,7 @@ public class Project {
 		this.deadline = deadline;
 		this.phase = phase;
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -95,6 +104,15 @@ public class Project {
 	public void setPhase(String phase) {
 		this.phase = phase;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	
 	
 	
