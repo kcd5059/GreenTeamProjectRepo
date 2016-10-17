@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.ssa.entity.Member;
+import com.ssa.entity.MemberTeamRel;
 import com.ssa.entity.Note;
 import com.ssa.entity.Project;
 import com.ssa.entity.ProjectNoteRel;
@@ -41,7 +42,7 @@ public class DBConfiguration {
          dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
          dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
          return dataSource;
-    }
+    } //
 
 //    @Bean
 //    public DataSource getDataSource() {
@@ -55,7 +56,7 @@ public class DBConfiguration {
 
     @Bean
     public SessionFactory sessionFactory() {
-        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class, ProjectTeamRel.class, ProjectNoteRel.class)
+        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class, ProjectTeamRel.class, ProjectNoteRel.class, MemberTeamRel.class)
                 .buildSessionFactory();
     }
 
