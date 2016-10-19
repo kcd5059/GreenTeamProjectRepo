@@ -56,7 +56,7 @@ public class DBConfiguration {
 
     @Bean
     public SessionFactory sessionFactory() {
-        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class, ProjectTeamRel.class, ProjectNoteRel.class, MemberTeamRel.class)
+        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class, ProjectTeamRel.class, MemberTeamRel.class)
                 .buildSessionFactory();
     }
 

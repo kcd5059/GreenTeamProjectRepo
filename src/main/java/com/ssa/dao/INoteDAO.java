@@ -10,4 +10,5 @@ public interface INoteDAO {
 	boolean addNote(Note note);
 	void updateNote(Note note);
 	void deleteNote(Note note);
+	List<Note> getNotesByProjectId(int projectId);
 }

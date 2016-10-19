@@ -1,7 +1,6 @@
 package com.ssa.entity;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,14 +31,11 @@ public class Project {
 	@Column(name="work_remaining")
 	private int work_remaining;
 	@Column(name="phase")
-	private String phase;
-	
+	private String phase;	
 	
 	public Project() {
 		super();
 	}
-	
-
 	public Project(String name, String description, int active, int priority, Date start_date, Date deadline,
 			int work_remaining, String phase) {
 		super();

@@ -32,6 +32,12 @@ public class NoteController {
 		Note note = noteService.getNoteById(id);
 		return new ResponseEntity<Note>(note, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/notes/{pid}", method = RequestMethod.GET)
+	public ResponseEntity<List<Note>> getNotesByProjectId(@PathVariable("pid") Integer projectId) {
+		List<Note> notes = noteService.getNotesByProjectId(projectId);
+		return new ResponseEntity<List<Note>>(notes, HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/deletenote/{id}", method = RequestMethod.DELETE)
 	public void deleteNote(@PathVariable("id") Integer id) {

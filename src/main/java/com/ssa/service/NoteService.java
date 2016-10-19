@@ -23,6 +23,11 @@ public class NoteService implements INoteService {
 	public Note getNoteById(int noteId) {
 		return noteDAO.getNoteById(noteId);
 	}
+	
+	@Override
+	public List<Note> getNotesByProjectId(int projectId) {
+		return noteDAO.getNotesByProjectId(projectId);
+	}
 
 	@Override
 	public boolean addNote(Note note) {

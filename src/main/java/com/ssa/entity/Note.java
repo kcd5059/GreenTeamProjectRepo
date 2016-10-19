@@ -21,19 +21,27 @@ public class Note {
 	private String message;
 	@Column(name="time_stamp")
 	private Date time_stamp;
+	@Column(name="project_id")
+	private int project_id;
 	
 	// Constructors
-	public Note() {};
-	public Note(int id, String message, Date time_stamp) {
+	public Note() {
+		super();
+	}
+	public Note(String message, Date time_stamp, int project_id) {
+		super();
+		this.message = message;
+		this.time_stamp = time_stamp;
+		this.project_id = project_id;
+	}
+	public Note(int id, String message, Date time_stamp, int project_id) {
+		super();
 		this.id = id;
 		this.message = message;
 		this.time_stamp = time_stamp;
+		this.project_id = project_id;
 	}
-	public Note(String message, Date time_stamp) {
-		this.message = message;
-		this.time_stamp = time_stamp;
-	}
-	
+
 	// Methods
 	public int getId() {
 		return id;
@@ -52,6 +60,12 @@ public class Note {
 	}
 	public void setTime_stamp(Date time_stamp) {
 		this.time_stamp = time_stamp;
+	}
+	public int getProject_id() {
+		return project_id;
+	}
+	public void setProject_id(int project_id) {
+		this.project_id = project_id;
 	}
 	
 	

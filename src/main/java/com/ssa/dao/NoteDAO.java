@@ -31,6 +31,14 @@ public class NoteDAO implements INoteDAO {
 	public Note getNoteById(int noteId) {
 		return (Note) hibernateTemplate.get(Note.class, noteId);
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Note> getNotesByProjectId(int projectId) {
+		String hql = "From Note where project_id =" + projectId;
+		List<Note> notes = (List<Note>) hibernateTemplate.find(hql);
+		return notes;
+	}
 
 	@Override
 	public boolean addNote(Note note) {
