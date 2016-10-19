@@ -55,6 +55,7 @@ public class NoteDAO implements INoteDAO {
 		Note update = getNoteById(note.getId());
 		update.setTime_stamp(note.getTime_stamp());
 		update.setMessage(note.getMessage());
+		update.setProject_id(note.getProject_id());
 		hibernateTemplate.update(update);
 	}
 
