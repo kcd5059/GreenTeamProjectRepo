@@ -46,7 +46,7 @@ public class ProjectDAO implements IProjectDAO {
 		Project update = getProjectById(project.getId());
 		update.setName(project.getName());
 		update.setDescription(project.getDescription());
-		update.setActive(project.getActive());
+		update.setStatus(project.getStatus());
 		update.setPriority(project.getPriority());
 		update.setDeadline(project.getDeadline());
 		update.setStart_date(project.getStart_date());

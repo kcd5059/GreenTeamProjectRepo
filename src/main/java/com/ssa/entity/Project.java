@@ -20,8 +20,8 @@ public class Project {
 	private String name;
 	@Column(name="description")
 	private String description;
-	@Column(name="active")
-	private int active;
+	@Column(name="status")
+	private int status;
 	@Column(name="priority")
 	private int priority;
 	@Column(name="start_date")
@@ -36,12 +36,12 @@ public class Project {
 	public Project() {
 		super();
 	}
-	public Project(String name, String description, int active, int priority, Date start_date, Date deadline,
+	public Project(String name, String description, int status, int priority, Date start_date, Date deadline,
 			int work_remaining, String phase) {
 		super();
 		this.name = name;
 		this.description = description;
-		this.active = active;
+		this.status = status;
 		this.priority = priority;
 		this.start_date = start_date;
 		this.deadline = deadline;
@@ -50,13 +50,13 @@ public class Project {
 	}
 
 
-	public Project(int id, String name, String description, int active, int priority, Date start_date, Date deadline,
+	public Project(int id, String name, String description, int status, int priority, Date start_date, Date deadline,
 			int work_remaining, String phase) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.active = active;
+		this.status = status;
 		this.priority = priority;
 		this.start_date = start_date;
 		this.deadline = deadline;
@@ -77,11 +77,11 @@ public class Project {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getActive() {
-		return active;
+	public int getStatus() {
+		return status;
 	}
-	public void setActive(int active) {
-		this.active = active;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	public int getPriority() {
 		return priority;
