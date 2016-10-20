@@ -31,13 +31,15 @@ public class Project {
 	@Column(name="work_remaining")
 	private int work_remaining;
 	@Column(name="phase")
-	private String phase;	
+	private String phase;
+	@Column(name="team_id")
+	private int team_id;
 	
 	public Project() {
 		super();
 	}
 	public Project(String name, String description, int status, int priority, Date start_date, Date deadline,
-			int work_remaining, String phase) {
+			int work_remaining, String phase, int team_id) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -47,11 +49,10 @@ public class Project {
 		this.deadline = deadline;
 		this.work_remaining = work_remaining;
 		this.phase = phase;
+		this.team_id = team_id;
 	}
-
-
 	public Project(int id, String name, String description, int status, int priority, Date start_date, Date deadline,
-			int work_remaining, String phase) {
+			int work_remaining, String phase, int team_id) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -62,9 +63,8 @@ public class Project {
 		this.deadline = deadline;
 		this.work_remaining = work_remaining;
 		this.phase = phase;
+		this.team_id = team_id;
 	}
-
-
 	public int getId() {
 		return id;
 	}
@@ -121,6 +121,12 @@ public class Project {
 	}
 	public void setWork_remaining(int work_remaining) {
 		this.work_remaining = work_remaining;
+	}
+	public int getTeam_id() {
+		return team_id;
+	}
+	public void setTeam_id(int team_id) {
+		this.team_id = team_id;
 	}
 	
 	
