@@ -33,6 +33,13 @@ public class MemberController {
 		Member member = memberService.getMemberById(id);
 		return new ResponseEntity<Member>(member, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/membername/{id}", method = RequestMethod.GET)
+	public ResponseEntity<String> getMemberNameById(@PathVariable("id") Integer id) {
+		Member member = memberService.getMemberById(id);
+		String name = member.getFirst_name() + " " + member.getLast_name();
+		return new ResponseEntity<String>(name, HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/deletemember/{id}", method = RequestMethod.DELETE)
 	public void deleteMember(@PathVariable("id") Integer id) {

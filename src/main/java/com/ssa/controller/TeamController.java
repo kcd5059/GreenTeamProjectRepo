@@ -32,6 +32,12 @@ public class TeamController {
 		Team team = teamService.getTeamById(id);
 		return new ResponseEntity<Team>(team, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/teamname/{id}", method = RequestMethod.GET)
+	public ResponseEntity<String> getTeamNameById(@PathVariable("id") Integer id) {
+		Team team = teamService.getTeamById(id);
+		return new ResponseEntity<String>(team.getDescription(), HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/deleteteam/{id}", method = RequestMethod.DELETE)
 	public void deleteTeam(@PathVariable("id") Integer id) {
