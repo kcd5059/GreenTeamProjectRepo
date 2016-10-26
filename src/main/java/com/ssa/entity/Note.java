@@ -23,24 +23,31 @@ public class Note {
 	private Date time_stamp;
 	@Column(name="project_id")
 	private int project_id;
+	@Column(name="flagged")
+	private int flagged;
 	
 	// Constructors
 	public Note() {
 		super();
 	}
-	public Note(String message, Date time_stamp, int project_id) {
+
+	public Note(String message, Date time_stamp, int project_id, int flagged) {
 		super();
 		this.message = message;
 		this.time_stamp = time_stamp;
 		this.project_id = project_id;
+		this.flagged = flagged;
 	}
-	public Note(int id, String message, Date time_stamp, int project_id) {
+
+	public Note(int id, String message, Date time_stamp, int project_id, int flagged) {
 		super();
 		this.id = id;
 		this.message = message;
 		this.time_stamp = time_stamp;
 		this.project_id = project_id;
+		this.flagged = flagged;
 	}
+
 
 	// Methods
 	public int getId() {
@@ -67,6 +74,13 @@ public class Note {
 	public void setProject_id(int project_id) {
 		this.project_id = project_id;
 	}
+	public int getFlagged() {
+		return flagged;
+	}
+	public void setFlagged(int flagged) {
+		this.flagged = flagged;
+	}
+	
 	
 	
 
