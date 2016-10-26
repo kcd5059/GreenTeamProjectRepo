@@ -20,6 +20,7 @@ import com.ssa.entity.Project;
 import com.ssa.entity.ProjectNoteRel;
 import com.ssa.entity.ProjectTeamRel;
 import com.ssa.entity.Team;
+import com.ssa.entity.User;
 
 @Configuration
 @EnableTransactionManagement
@@ -56,7 +57,7 @@ public class DBConfiguration {
 
     @Bean
     public SessionFactory sessionFactory() {
-        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class, ProjectTeamRel.class, MemberTeamRel.class)
+        return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Member.class, Team.class, Project.class, Note.class, ProjectTeamRel.class, MemberTeamRel.class, User.class)
                 .buildSessionFactory();
     }
 
