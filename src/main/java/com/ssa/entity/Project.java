@@ -34,12 +34,14 @@ public class Project {
 	private String phase;
 	@Column(name="team_id")
 	private int team_id;
+	@Column(name="tracked")
+	private int tracked;
 	
 	public Project() {
 		super();
 	}
 	public Project(String name, String description, int status, int priority, Date start_date, Date deadline,
-			int work_remaining, String phase, int team_id) {
+			int work_remaining, String phase, int team_id, int tracked) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -50,9 +52,10 @@ public class Project {
 		this.work_remaining = work_remaining;
 		this.phase = phase;
 		this.team_id = team_id;
+		this.tracked = tracked;
 	}
 	public Project(int id, String name, String description, int status, int priority, Date start_date, Date deadline,
-			int work_remaining, String phase, int team_id) {
+			int work_remaining, String phase, int team_id, int tracked) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -64,6 +67,7 @@ public class Project {
 		this.work_remaining = work_remaining;
 		this.phase = phase;
 		this.team_id = team_id;
+		this.tracked = tracked;
 	}
 	public int getId() {
 		return id;
@@ -128,6 +132,13 @@ public class Project {
 	public void setTeam_id(int team_id) {
 		this.team_id = team_id;
 	}
+	public int getTracked() {
+		return tracked;
+	}
+	public void setTracked(int tracked) {
+		this.tracked = tracked;
+	}
+	
 	
 	
 	
